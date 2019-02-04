@@ -1,4 +1,5 @@
 // CALCULATE TOTAL COST USING REDUCE()
+//reduce() iterates over the arraym does logic and then reduces to a single result
 
 const outEl = document.querySelector("#output")
 businesses.forEach(business => {
@@ -54,6 +55,7 @@ document.querySelector("#companySearch").addEventListener("keypress", keyPressEv
 
 
 //FILTER BY STATE
+//filter method checks to see what items in the array meets the condition and places them in a new array
 
 const newYorkBusinesses = businesses.filter(business => {
     let inNewYork = false 
@@ -90,6 +92,7 @@ manufacturingBusinesses.forEach(business => {
 
 outEl.innerHTML += `<h1>Purchasing Agents</h1>`
 
+//map() method used for transforming items in one array to a different structure and storing the new items in another array
 const purchasingAgents = businesses.map(business => { 
    return agent = {
        "fullName": `${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}`, //combining objects within objects with string interpolation 
