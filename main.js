@@ -109,3 +109,26 @@ purchasingAgents.forEach(agent => {
     `
     outEl.innerHTML += "<hr/>"
 })
+
+
+//BIG SPENDERS EXERCISE
+// produce a report that list only the companies that have placed an order for more than nine thousand dollars
+// Use the filter method to get all the big spenders in the main array into a new one.
+
+const containerEl = document.querySelector("#container")
+
+const bigSpenders = businesses.filter(business => {
+    if (business.orders.find(order => {
+     return order > 9000
+    })) {
+        return business
+    }
+})
+console.table(bigSpenders)
+
+
+businesses.forEach(business => {
+let orderTotal = business.orders.reduce(
+    (accumulator, order) => accumulator += order, 0).toFixed(2)
+console.log(orderTotal)
+})
